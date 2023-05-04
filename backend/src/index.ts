@@ -1,18 +1,16 @@
-import mongoose from 'mongoose';
+/* eslint-disable @typescript-eslint/no-namespace */
+import { startServer } from '@server/start';
+import { UserModel } from '@db/types/user.types';
 
-import { seedDbDefaultUsers } from './db/utils/seedDb';
-import { dbUri } from './common/config';
-import logger from './common/logger';
+declare global {
+    namespace Express {
+        interface Request {
+            token: string;
+            user: UserModel;
+        }
+    }
+}
 
 (async () => {
-    try {
-        console.log('db uri', dbUri);
-        await mongoose.connect(dbUri);
-
-        logger.info('successfully connected to database!');
-        seedDbDefaultUsers();
-    } catch (error) {
-        console.log(error);
-        logger.error('Failed to start server!');
-    }
+    startServer();
 })();

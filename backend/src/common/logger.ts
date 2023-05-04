@@ -1,5 +1,5 @@
 import * as winston from 'winston';
-import { logLevel } from './config';
+import { logLevel } from '@common/config';
 
 const logger = winston.createLogger({
     level: logLevel,

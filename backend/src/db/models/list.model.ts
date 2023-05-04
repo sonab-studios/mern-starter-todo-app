@@ -1,6 +1,7 @@
-import mongoose, { Schema, InferSchemaType } from 'mongoose';
+import { Schema, model } from 'mongoose';
+import { IListItem, IList, IListModel, IListMethods } from '@db/types/list.types';
 
-export const listItemSchema = new Schema(
+export const listItemSchema = new Schema<IListItem>(
     {
         title: { type: String, required: true },
         details: { type: String },
@@ -10,11 +11,10 @@ export const listItemSchema = new Schema(
     },
 );
 
-const schema = new Schema(
+const schema = new Schema<IList, IListModel, IListMethods>(
     {
-        user: { type: Schema.Types.ObjectId, ref: 'User' },
-        createdAt: { type: String, required: true },
-        title: { type: String, required: true },
+        user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        name: { type: String, required: true },
         listItems: [listItemSchema],
     },
     {
@@ -22,6 +22,6 @@ const schema = new Schema(
     },
 );
 
-export type List = InferSchemaType<typeof schema>;
+const List = model<IList, IListModel>('List', schema);
 
-export default mongoose.model<List>('List', schema);
+export default  List
