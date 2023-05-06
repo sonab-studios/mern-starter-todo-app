@@ -1,13 +1,15 @@
 # Backend Service
+author: Jayson Nabor
 
 ## Pre-requisite
 
-Node.js latest LTS (v18.16.0)
+Node.js LTS (v18.16.0)
 Run MongDB service: see DbReadMe.md in database folder
 
 ## Steps
 
 -   Install dependencies: `npm install`
+-   To run lint: `npm run lint`
 -   To run tests: `npm run test`
 -   Run on local: `npm run start:dev`
 
@@ -17,7 +19,7 @@ password: Password!123
 
 ## Environment Variables
 
-Create a \*.env file with the following example.
+Create a \*.env file with the following variables.
 e.g.
 AUTH_SECRET_KEY=secret
 DB_CONNECTION_URL=127.0.0.1:27017

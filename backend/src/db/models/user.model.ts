@@ -41,8 +41,9 @@ schema.pre('save', async function (next) {
 });
 
 schema.methods.toPublicJSON = function (): PublicUserInfo {
-    const { _id, email, firstName, lastName } = this.toObject();
-    return { _id: _id.toString(), email, firstName, lastName };
+    const { _id, email, firstName, lastName } = this.toJSON();
+    
+    return { _id, email, firstName, lastName };
 };
 
 schema.methods.generateAuthToken = async function (): Promise<string> {

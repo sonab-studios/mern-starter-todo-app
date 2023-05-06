@@ -1,10 +1,11 @@
 # MongoDB Service
+author: Jayson Nabor
 
 ## Pre-requisite
 Install docker at https://www.docker.com/
 
 ## Environment Variables
-Create a *.env file with the following example.
+Create a *.env file with the following variables.
 e.g.
 MONGO_INITDB_ROOT_USERNAME=admin
 MONGO_INITDB_ROOT_PASSWORD=password

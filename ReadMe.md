@@ -1,6 +1,5 @@
 # List Application
-
-developed by jnabor
+author: Jayson Nabor
 
 ## Tech Stack
 

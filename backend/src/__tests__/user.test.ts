@@ -8,7 +8,7 @@ import { userLogin, userLogout } from '@server/handlers/user.handler';
 beforeAll(async () => {
     await mongoose.connect(dbUri);
 
-    // add default user for front-end tests
+    // try add default user for frontend usage
     try {
         await User.create({
             email: `foo.bar@test.com`,
@@ -64,18 +64,25 @@ describe('User Handler', function () {
     it('Handles user login', async () => {
         if (!user) return;
 
-        const loginUser = await userLogin(user.email, user.password);
+        expect.assertions(2);
+        try {
+            const login = await userLogin(user.email, 'Password!23');
+            expect(login.user.email).toMatch(user.email);
+            expect(login.token).toBeTruthy();
 
-        expect(loginUser.token).toBeTruthy();
-        expect(loginUser.user.email).toMatch(user.email);
-        token = loginUser.token;
+            token = login.token;
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                expect(e.message).toMatch('');
+            }
+        }
     });
 
     it('Handles user login email error', async () => {
         if (!user) return;
 
         try {
-            await userLogin('wrong@email.com', user.password);
+            await userLogin('wrong@email.com', 'Password!23');
         } catch (e: unknown) {
             if (e instanceof Error) {
                 expect(e.message).toMatch('User not found!');

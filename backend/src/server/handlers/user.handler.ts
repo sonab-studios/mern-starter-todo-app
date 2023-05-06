@@ -16,7 +16,6 @@ export async function userLogout(
     token: string,
 ): Promise<void> {
     user.tokens = user.tokens.filter((tk) => tk.token !== token);
-    user.markModified('tokens')
 
     await user.save();
 }
