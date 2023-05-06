@@ -21,3 +21,10 @@ author: Jayson Nabor
 -   use default user to login
     email: foo.bar@test.com
     password: Password!123
+
+
+## Demo
+
+
+https://user-images.githubusercontent.com/10112886/236650955-4324c375-3acf-494f-bc72-e2a1a93a99bf.mov
+
