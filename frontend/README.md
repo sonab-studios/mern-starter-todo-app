@@ -2,10 +2,9 @@
 
 ## Available Scripts
 
-`npm start`
-`npm test`
-`npm run build`
-`npm lint`
+* `npm start`
+* `npm run build`
+* `npm lint`
 
 ## Login
 
