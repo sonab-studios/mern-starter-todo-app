@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 
 import logger from '@common/logger';
 import { dbUri, port } from '@common/config';
@@ -9,7 +10,9 @@ import listRouter from '@server/routers/list';
 
 const app = express();
 
+app.use(cors())
 app.use(express.json());
+
 app.use(userRouter);
 app.use(listRouter);
 

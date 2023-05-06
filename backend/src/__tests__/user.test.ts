@@ -7,6 +7,16 @@ import { userLogin, userLogout } from '@server/handlers/user.handler';
 
 beforeAll(async () => {
     await mongoose.connect(dbUri);
+
+    // add default user for front-end tests
+    try {
+        await User.create({
+            email: `foo.bar@test.com`,
+            password: 'Password!23',
+        });
+    } catch (e) {
+        // user may already exist
+    }
 });
 
 afterAll(async () => {

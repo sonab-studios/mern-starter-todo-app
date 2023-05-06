@@ -8,8 +8,12 @@ Run MongDB service: see DbReadMe.md in database folder
 ## Steps
 
 -   Install dependencies: `npm install`
--   Run on local: `npm run start:dev`
 -   To run tests: `npm run test`
+-   Run on local: `npm run start:dev`
+
+note: running tests also creates the following dummy user
+email: foo.bar@test.com
+password: Password!123
 
 ## Environment Variables
 
@@ -27,6 +31,7 @@ PORT=8080
 -   POST /users/login [email, password] - includes token in response
 -   POST /users/logout - removes user token
 -   Header: Authorization: Bearer <token>
+-
 
 ## API Methods
 
