@@ -51,7 +51,6 @@ export const useListName = () => {
 
     const handleChange = useCallback(
         ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
-            console.log(value);
             setTmpTitle(value);
         },
         [setTmpTitle],

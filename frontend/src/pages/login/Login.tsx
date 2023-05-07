@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Icon, Input, Message } from 'semantic-ui-react';
 
-import { useLogin } from 'pages/login/login.hooks';
+import { useLoginForm } from 'pages/login/login.hooks';
 import { Wrapper, FormWrapper } from 'pages/login/login.styles';
 
 export const Login = () => {
@@ -12,7 +12,8 @@ export const Login = () => {
         handlePwChange,
         handleEmailChange,
         showErr,
-    } = useLogin();
+    } = useLoginForm();
+    
     return (
         <Wrapper>
             <FormWrapper>

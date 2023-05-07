@@ -21,6 +21,7 @@ export const useProvider = () => {
 
     useEffect(() => {
         const user = window.localStorage.getItem('app-user');
+
         if (!user) return;
 
         const { email, token } = JSON.parse(user);
@@ -35,12 +36,8 @@ export const useProvider = () => {
     }, []);
 
     useEffect(() => {
-        console.log('user updated', state.user);
-    }, [state.user]);
-
-    useEffect(() => {
         if (!state.user) return;
-        
+
         (async () => {
             await fetchLists();
         })();

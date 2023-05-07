@@ -9,7 +9,6 @@ import { useContent } from 'components/content/content.hooks';
 
 export const Content = () => {
     const { show, items } = useContent();
-
     return (
         <>
             {show ? (
@@ -21,7 +20,10 @@ export const Content = () => {
                         {items.map((item) => (
                             <ListItem
                                 key={item._id}
-                                item={item}
+                                _id={item._id}
+                                title={item.title}
+                                details={item.details}
+                                addedAt={item.addedAt}
                             />
                         ))}
                     </List>

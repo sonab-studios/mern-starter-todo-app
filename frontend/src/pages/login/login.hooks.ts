@@ -1,49 +1,33 @@
 import React, { useState, useCallback } from 'react';
 
-import { login } from 'api/toDoList';
-import { useAppUpdater } from 'provider/hooks';
+import { useLogin } from 'hooks/useLogin';
 
-export const useLogin = () => {
-    const dispatch = useAppUpdater();
+export const useLoginForm = () => {
+    const { handleLogin: userLogin } = useLogin();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showErr, setShowErr] = useState(false);
 
-    const handleLogin = useCallback(
-        (e: React.MouseEvent<HTMLElement>) => {
-            console.log('handle login', email, password);
-            (async () => {
-                const data = await login(email, password);
-                !data && setShowErr(true);
-
-                const token = data?.token || '';
-                dispatch({
-                    type: 'SET_USER',
-                    payload: data ? { email, token } : null,
-                });
-
-                window.localStorage.setItem(
-                    `app-user`,
-                    JSON.stringify({ email, token }),
-                );
-            })();
-        },
-        [dispatch, email, password, setShowErr],
-    );
-
     const handlePwChange = useCallback(
         ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(value);
+            showErr && setShowErr(false);
         },
-        [setPassword],
+        [showErr, setShowErr, setPassword],
     );
 
     const handleEmailChange = useCallback(
         ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(value);
+            showErr && setShowErr(false);
         },
-        [setEmail],
+        [showErr, setShowErr, setEmail],
     );
+
+    const handleLogin = useCallback(async () => {
+        const isAuth = await userLogin(email, password);
+        !isAuth && setShowErr(true);
+    }, [userLogin, setShowErr, email, password]);
 
     return {
         email,

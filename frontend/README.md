@@ -4,8 +4,9 @@ author: Jayson Nabor
 ## Available Scripts
 
 -   Install dependencies: `npm install`
+-   To run test: `npm test`
 -   To run lint: `npm lint`
-*   To build: `npm run build`
+-   To build: `npm run build`
 -   Run on local: `npm start`
 
 ## Environment Variables

@@ -9,7 +9,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/axios": "^0.14.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.25",
     "@types/react": "^18.2.5",
     "@types/react-dom": "^18.2.3",
@@ -24,17 +23,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "node_modules/.bin/eslint --ext .ts,.tsx"
+    "test": "react-scripts test --verbose --transformIgnorePatterns 'node_modules/(?!axios)/'",
+    "lint": "eslint src/"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "rules": {
-      "semi": 0,
-      "no-console": 0
-    }
+    ]
   },
   "browserslist": {
     "production": [
@@ -49,12 +45,14 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.5.1",
     "babel-eslint": "^10.1.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "ts-jest": "^29.1.0"
   }
 }

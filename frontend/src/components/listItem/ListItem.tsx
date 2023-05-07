@@ -1,7 +1,5 @@
 import { Button, Input, Form, List, Icon } from 'semantic-ui-react';
 
-import { ListItem as ListItemProps } from 'api/todoList.types';
-
 import { useListItem } from 'components/listItem/listItem.hooks';
 import {
     InputWrapper,
@@ -12,10 +10,13 @@ import {
 } from 'components/listItem/listItem.styles';
 
 type Props = {
-    item: ListItemProps;
+    _id: string;
+    title: string;
+    details?: string;
+    addedAt: string;
 };
 
-export const ListItem = ({ item: { _id, title, details, addedAt } }: Props) => {
+export const ListItem = ({ _id, title, details, addedAt }: Props) => {
     const {
         date,
         editMode,

@@ -33,6 +33,7 @@ export const AddList = () => {
                     <Controls>
                         <Button
                             onClick={handleCreateList}
+                            data-testid="create-list"
                             icon='checkmark'
                             size='small'
                         />
