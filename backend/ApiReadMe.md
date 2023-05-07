@@ -21,19 +21,18 @@ password: Password!123
 
 Create a \*.env file with the following variables.
 e.g.
-AUTH_SECRET_KEY=secret
-DB_CONNECTION_URL=127.0.0.1:27017
-DB_NAME=test
-DB_USER=root
-DB_PASSWORD=password
-PORT=8080
+* AUTH_SECRET_KEY=secret
+* DB_CONNECTION_URL=127.0.0.1:27017
+* DB_NAME=test
+* DB_USER=root
+* DB_PASSWORD=password
+* PORT=8080
 
 ## Authentication
 
 -   POST /users/login [email, password] - includes token in response
 -   POST /users/logout - removes user token
 -   Header: Authorization: Bearer <token>
--
 
 ## API Methods
 

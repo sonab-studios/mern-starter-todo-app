@@ -13,7 +13,7 @@ author: Jayson Nabor
 
 Create a \*.env file with the following variables.
 e.g.
-REACT_APP_API_URL=http://localhost:8080
+* REACT_APP_API_URL=http://localhost:8080
 
 ## Login
 
