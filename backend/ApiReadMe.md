@@ -6,6 +6,17 @@ author: Jayson Nabor
 Node.js LTS (v18.16.0)
 Run MongDB service: see DbReadMe.md in database folder
 
+## Environment Variables
+
+Create .env file with the following variables.  
+
+AUTH_SECRET_KEY=secret
+DB_CONNECTION_URL=127.0.0.1:27017
+DB_NAME=test
+DB_USER=root
+DB_PASSWORD=password
+PORT=8080
+
 ## Steps
 
 -   Install dependencies: `npm install`
@@ -17,29 +28,18 @@ note: running tests also creates the following dummy user
 email: foo.bar@test.com
 password: Password!123
 
-## Environment Variables
-
-Create a \*.env file with the following variables.
-e.g.
-* AUTH_SECRET_KEY=secret
-* DB_CONNECTION_URL=127.0.0.1:27017
-* DB_NAME=test
-* DB_USER=root
-* DB_PASSWORD=password
-* PORT=8080
-
 ## Authentication
 
 -   POST /users/login [email, password] - includes token in response
 -   POST /users/logout - removes user token
--   Header: Authorization: Bearer <token>
+-   Header: Authorization: Bearer \<Token\>
 
 ## API Methods
 
 ###### URL Params
 
-*lid: list id
-*iid: item id
+* lid: list id
+* iid: item id
 
 ### Create
 

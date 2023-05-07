@@ -10,14 +10,17 @@ author: Jayson Nabor
 
 ## Steps
 
-1. run database - https://github.com/sonab-studios/mern-starter-todo-app/blob/main/database/DbReadMe.md
+##### Step 1. run database
+https://github.com/sonab-studios/mern-starter-todo-app/blob/main/database/DbReadMe.md
 
-2. run backend - https://github.com/sonab-studios/mern-starter-todo-app/blob/main/backend/ApiReadMe.md
+##### Step 2. run backend
+https://github.com/sonab-studios/mern-starter-todo-app/blob/main/backend/ApiReadMe.md
 
-3. run frontend - https://github.com/sonab-studios/mern-starter-todo-app/blob/main/frontend/README.md
+##### Step 3. run frontend
+https://github.com/sonab-studios/mern-starter-todo-app/blob/main/frontend/README.md
 
 ## Login
-
+Running test on backend wil create the following user.
 -   use default user to login
     email: foo.bar@test.com
     password: Password!123
