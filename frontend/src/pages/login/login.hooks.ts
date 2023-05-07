@@ -5,8 +5,8 @@ import { useAppUpdater } from 'provider/hooks';
 
 export const useLogin = () => {
     const dispatch = useAppUpdater();
-    const [email, setEmail] = useState('foo.bar@test.com');
-    const [password, setPassword] = useState('Password!23');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [showErr, setShowErr] = useState(false);
 
     const handleLogin = useCallback(
